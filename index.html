@@ -3,10 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clegas3 | Software Developer</title>
+  <title>Christian Legaspi | Software Developer & AI Engineer</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- Admin Panel -->
+  <div id="adminPanel" class="admin-panel">
+    <button id="adminToggle" class="admin-btn" aria-label="Toggle admin panel" title="Admin">⚙️</button>
+    <div id="adminMenu" class="admin-menu hidden">
+      <h3>Edit Profile</h3>
+      <button id="editAvatarBtn" class="admin-menu-btn">Change Avatar</button>
+      <button id="closeAdmin" class="admin-menu-btn close-btn">Close</button>
+    </div>
+  </div>
+
+  <!-- Edit Avatar Modal -->
+  <div id="editAvatarModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Change Profile Picture</h2>
+        <button class="modal-close" id="closeAvatarModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="file" id="avatarInput" accept="image/*" />
+        <div id="imagePreview" class="image-preview hidden">
+          <img id="previewImg" alt="Preview" />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="saveAvatarBtn" class="btn btn-primary">Save Changes</button>
+        <button id="cancelAvatarBtn" class="btn btn-outline">Cancel</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Navigation -->
   <nav id="navbar">
@@ -28,10 +58,10 @@
   <section id="hero">
     <div class="hero-content">
       <p class="hero-greeting">Hi, I'm</p>
-      <h1 class="hero-name">Clegas3</h1>
-      <h2 class="hero-title">Software Developer</h2>
+      <h1 class="hero-name">Christian Legaspi</h1>
+      <h2 class="hero-title">Software Developer & AI Engineer</h2>
       <p class="hero-description">
-        I build clean, accessible, and performant web experiences.
+        Aspiring computer scientist passionate about building intelligent systems and robust applications.
       </p>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -49,19 +79,16 @@
       <h2 class="section-title">About Me</h2>
       <div class="about-grid">
         <div class="about-avatar">
-          <div class="avatar-placeholder">C3</div>
+          <img src="PFP/pfp.png" alt="Christian Legaspi" class="avatar-image" />
         </div>
         <div class="about-text">
           <p>
-            I'm a passionate software developer with a love for creating
-            intuitive and engaging digital experiences. I enjoy turning complex
-            problems into simple, beautiful, and fast solutions.
+            I'm a Computer Science student at California Baptist University (Expected May 2027) pursuing a Bachelor of Science in Computer Science (ABET Accredited) with a 3.03 GPA. Passionate about AI, robotics, and full-stack development with hands-on experience in Salesforce/Agentforce development, autonomous systems, and mobile app creation.
           </p>
           <p>
-            When I'm not coding, you can find me exploring new technologies,
-            contributing to open-source projects, or enjoying the outdoors.
+            From developing object detection systems with OpenCV and TensorFlow to creating production-level AI agents, I'm committed to building intelligent solutions that make an impact. Certified CompTIA A+ and based in Riverside, CA.
           </p>
-          <a href="#contact" class="btn btn-primary" style="margin-top:1.25rem;">Let's Work Together</a>
+          <a href="#contact" class="btn btn-primary" style="margin-top:1.25rem;">Let's Collaborate</a>
         </div>
       </div>
     </div>
@@ -74,32 +101,32 @@
       <div class="skills-grid">
         <div class="skill-card">
           <div class="skill-icon">&#128187;</div>
-          <h3>Frontend</h3>
+          <h3>Languages</h3>
           <ul>
+            <li>C++, Java, Python, C#</li>
+            <li>JavaScript, TypeScript</li>
+            <li>Dart, Swift, Apex</li>
             <li>HTML &amp; CSS</li>
-            <li>JavaScript / TypeScript</li>
-            <li>React &amp; Vue</li>
-            <li>Responsive Design</li>
           </ul>
         </div>
         <div class="skill-card">
           <div class="skill-icon">&#9881;</div>
-          <h3>Backend</h3>
+          <h3>Frameworks &amp; Tools</h3>
           <ul>
-            <li>Node.js &amp; Express</li>
-            <li>Python &amp; Django</li>
-            <li>REST &amp; GraphQL APIs</li>
-            <li>SQL &amp; NoSQL</li>
+            <li>React, Flutter, Salesforce</li>
+            <li>Firebase, TensorFlow, OpenCV</li>
+            <li>GitHub, VS Code, Xcode, IntelliJ</li>
+            <li>Lightning, Figma, Unity</li>
           </ul>
         </div>
         <div class="skill-card">
           <div class="skill-icon">&#128736;</div>
-          <h3>Tools &amp; DevOps</h3>
+          <h3>Specializations</h3>
           <ul>
-            <li>Git &amp; GitHub</li>
-            <li>Docker &amp; CI/CD</li>
-            <li>AWS / GCP</li>
-            <li>Linux &amp; Bash</li>
+            <li>AI &amp; Machine Learning</li>
+            <li>Object Detection &amp; Computer Vision</li>
+            <li>Mobile App Development</li>
+            <li>Salesforce/Agentforce Development</li>
           </ul>
         </div>
       </div>
@@ -112,44 +139,70 @@
       <h2 class="section-title">Projects</h2>
       <div class="projects-grid">
         <article class="project-card">
-          <div class="project-image project-image-1"></div>
+          <div class="project-image project-image-1">
+            <img src="resq-drone.png" alt="ResQ Drone Web Application" class="project-img" />
+          </div>
           <div class="project-info">
-            <h3>E-Commerce Platform</h3>
-            <p>A full-stack online store with authentication, cart, and Stripe payments.</p>
+            <h3>ResQ Drone - Web Application</h3>
+            <p>Real-time drone coordination platform with secure group management, role-based permissions, and dynamic UI synchronization using React and Firebase.</p>
             <div class="project-tags">
-              <span>React</span><span>Node.js</span><span>MongoDB</span>
+              <span>React</span><span>Firebase</span><span>Firestore</span><span>Web App</span>
             </div>
             <div class="project-links">
-              <a href="#" class="btn btn-sm btn-outline">Demo</a>
-              <a href="#" class="btn btn-sm btn-outline">GitHub</a>
+              <a href="https://github.com/Clegas3" target="_blank" class="btn btn-sm btn-outline">GitHub</a>
+              <a href="https://www.linkedin.com/in/christian-james-legaspi" target="_blank" class="btn btn-sm btn-outline">Details</a>
             </div>
           </div>
         </article>
         <article class="project-card">
-          <div class="project-image project-image-2"></div>
+          <div class="project-image project-image-2 carousel">
+            <div class="carousel-container">
+              <img src="1 Fidget Start.png" alt="Fidget App Screenshot 1" class="carousel-img active" />
+              <img src="2 Fidget home.png" alt="Fidget App Screenshot 2" class="carousel-img" />
+              <img src="3 Fidget side bar.png" alt="Fidget App Screenshot 3" class="carousel-img" />
+              <img src="4 Fidget visual.png" alt="Fidget App Screenshot 4" class="carousel-img" />
+              <img src="5 Fidget Visual color change.png" alt="Fidget App Screenshot 5" class="carousel-img" />
+              <img src="6 Fidget vibration screen.png" alt="Fidget App Screenshot 6" class="carousel-img" />
+              <img src="7 Fidget click counter.png" alt="Fidget App Screenshot 7" class="carousel-img" />
+              <img src="8 Fidget color them changer.png" alt="Fidget App Screenshot 8" class="carousel-img" />
+              <img src="9 Fidget color changing.png" alt="Fidget App Screenshot 9" class="carousel-img" />
+              <img src="10 Fidget profile.png" alt="Fidget App Screenshot 10" class="carousel-img" />
+            </div>
+            <button class="carousel-btn prev" data-carousel="fidget-carousel">❮</button>
+            <button class="carousel-btn next" data-carousel="fidget-carousel">❯</button>
+            <div class="carousel-dots" id="fidget-carousel"></div>
+          </div>
           <div class="project-info">
-            <h3>Task Management App</h3>
-            <p>A collaborative kanban-style board with real-time updates and drag-and-drop.</p>
+            <h3>Fidget App - Mobile Development</h3>
+            <p>Cross-platform mobile app featuring aesthetic visuals and haptics feedback. Designed UI with Figma, developed with Flutter in a 2-person team.</p>
             <div class="project-tags">
-              <span>Vue.js</span><span>Firebase</span><span>Tailwind</span>
+              <span>Flutter</span><span>Dart</span><span>Figma</span><span>Mobile</span>
             </div>
             <div class="project-links">
-              <a href="#" class="btn btn-sm btn-outline">Demo</a>
-              <a href="#" class="btn btn-sm btn-outline">GitHub</a>
+              <a href="https://github.com/BenjaminSprankle/flutter_fidget_final" target="_blank" class="btn btn-sm btn-outline">GitHub</a>
+              <a href="https://www.youtube.com/watch?v=UceJagsbfn4" target="_blank" class="btn btn-sm btn-outline">Demo</a>
             </div>
           </div>
         </article>
         <article class="project-card">
-          <div class="project-image project-image-3"></div>
+          <div class="project-image project-image-3 carousel">
+            <div class="carousel-container">
+              <img src="Object detection.png" alt="Object Detection System Screenshot 1" class="carousel-img active" />
+              <img src="Object detection 2.png" alt="Object Detection System Screenshot 2" class="carousel-img" />
+            </div>
+            <button class="carousel-btn prev" data-carousel="object-detection-carousel">❮</button>
+            <button class="carousel-btn next" data-carousel="object-detection-carousel">❯</button>
+            <div class="carousel-dots" id="object-detection-carousel"></div>
+          </div>
           <div class="project-info">
-            <h3>Data Dashboard</h3>
-            <p>An analytics dashboard visualizing large datasets with interactive charts.</p>
+            <h3>Object Detection with OpenCV &amp; TensorFlow</h3>
+            <p>Advanced object detection system to track color and position of complex shapes for autonomous robotics competition.</p>
             <div class="project-tags">
-              <span>Python</span><span>D3.js</span><span>PostgreSQL</span>
+              <span>Python</span><span>OpenCV</span><span>TensorFlow</span><span>Computer Vision</span>
             </div>
             <div class="project-links">
-              <a href="#" class="btn btn-sm btn-outline">Demo</a>
-              <a href="#" class="btn btn-sm btn-outline">GitHub</a>
+              <a href="https://github.com/Clegas3" target="_blank" class="btn btn-sm btn-outline">GitHub</a>
+              <a href="https://www.linkedin.com/in/christian-james-legaspi" target="_blank" class="btn btn-sm btn-outline">Details</a>
             </div>
           </div>
         </article>
@@ -165,7 +218,7 @@
         Whether you have a project in mind, a question, or just want to say hi —
         my inbox is always open.
       </p>
-      <form class="contact-form" id="contactForm" novalidate>
+      <form class="contact-form" id="contactForm" action="https://formsubmit.co/christian.legaspi619@gmail.com" method="POST" novalidate>
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Your name" required />
@@ -187,19 +240,19 @@
   <!-- Footer -->
   <footer id="footer">
     <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Clegas3. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Christian Legaspi. All rights reserved.</p>
       <div class="social-links">
         <a href="https://github.com/Clegas3" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
           </svg>
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/christian-james-legaspi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
           </svg>
         </a>
-        <a href="#contact" aria-label="Email">
+        <a href="mailto:christian.legaspi619@gmail.com" aria-label="Email">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
           </svg>
